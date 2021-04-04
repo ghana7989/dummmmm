@@ -14,7 +14,7 @@ const sfsc = new Blockchain()
 
 app.use(cors())
 app.use(express.json())
-app.use(express.urlencoded())
+// app.use(express.urlencoded({urlencoded: true}))
 
 // get entire blockchain
 app.get('/blockchain', function (req, res) {
@@ -56,8 +56,7 @@ app.post('/transaction/broadcast', function (req, res) {
 		req.body.npk,
 		req.body.farmer,
 		fertilizerType,
-    ( land = req.body.land ),
-
+		(land = req.body.land),
 	)
 	res.json({
 		...newTransaction,

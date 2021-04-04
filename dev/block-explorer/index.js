@@ -33,12 +33,12 @@ document.getElementById("submit").addEventListener("click", async (e) => {
         // fertilizerType: "70-54-87"
         // npk: 7989
         // transactionId: "0ba5955c4dad48ec86cbe395964edde5"
-        const dealearAddressElement = document.getElementById('dealerAddress')
+        const dealerAddressElement = document.getElementById('dealerAddress')
         const fertilizerTypeElement = document.getElementById('fertilizerType')
 
-        dealearAddressElement.value = dealerAddress
+        dealerAddressElement.value = dealerAddress
         fertilizerTypeElement.value = fertilizerType
-        dealearAddressElement.disabled = true
+        dealerAddressElement.disabled = true
         fertilizerTypeElement.disabled = true
         NPKValue.disabled = true
         FarmerAddress.disabled = true

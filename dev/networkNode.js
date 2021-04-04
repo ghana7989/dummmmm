@@ -34,19 +34,15 @@ app.post('/transaction', function (req, res) {
 
 // broadcast transaction
 app.post('/transaction/broadcast', function (req, res) {
-	const newTransaction = sfsc.createNewTransaction(req.body.npk, req.body.farmer)
-	console.log(newTransaction)
 	const dealerAddress = '	AGRORYTHUSEVAKENDRAMNBDNDFNHCFUJ'
 	// Logic
-	const fertilizerType = npk => {
-		const N = npk.split('-').slice(0, 2).parseInt()
-		const P = npk.split('-').slice(2, 4).parseInt()
-		const K = npk.split('-').slice(-2).parseInt()
-
-		var r1 = 4 - N / K
-		var r2 = 2 - P / K
-		if (K < 1) var r3 = 1 - K
-		else var r3 = 1
+	const getFertilizerType = npk => {
+		const [N, P, K] = req.body.npk.split('-')
+		let r1 = 4 - Number(N) / Number(K)
+		let r2 = 2 - Number(P) / Number(K)
+		let r3 = undefined
+		if (Number(K) === 1) r3 = 0
+		else r3 = 1 - Number(K)
 		if (r1 == 0 && r2 == 0 && r3 == 0) return 'NPK Values are ideal,No fertilizer required'
 		if (r1 < r2 && r1 < r3) return 'Urea(46:0:0)'
 		if (r2 < r1 && r2 < r3) return 'Di-Ammonium Phosphate(DAP)'
@@ -59,6 +55,8 @@ app.post('/transaction/broadcast', function (req, res) {
 		return 'Particular Fertilizer Not Available'
 	}
 
+	const fertilizerType = getFertilizerType(req.body.npk)
+	const newTransaction = sfsc.createNewTransaction(req.body.npk, req.body.farmer, fertilizerType)
 	res.json({
 		...newTransaction,
 		dealerAddress,
@@ -78,13 +76,13 @@ app.post('/transaction/broadcast', function (req, res) {
 		requestPromises.push(rp(requestOptions))
 	})
 
-	Promise.all(requestPromises)
-		.then(data => {
-			res.json({note: 'Transaction created and broadcast successfully.'})
-		})
-		.catch(e => {
-			throw new Error(e.message)
-		})
+	// Promise.all(requestPromises)
+	// 	.then(data => {
+	// 		res.json({note: 'Transaction created and broadcast successfully.'})
+	// 	})
+	// 	.catch(e => {
+	// 		throw new Error(e.message)
+	// 	})
 })
 
 // mine a block

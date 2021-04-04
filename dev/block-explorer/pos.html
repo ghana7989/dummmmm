@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-  <script async  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +12,7 @@
     integrity="sha512-paVHVRRhdoOu1nOXKnqDC1Vka0nh7FAmU3nsM4n2FKxOQTeF6crMdMfkVvEsuaOXZ6oEAVL5+wLbQcule/Xdag=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css">
-  <script  src="index.js" defer></script>
+  <script src="index.js" defer></script>
   <title>Major Project</title>
 </head>
 <header class="text-gray-600 body-font">
@@ -28,7 +30,9 @@
         viewBox="0 0 24 24">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
       </svg>
-      <span class="ml-3 text-xl"><h4><b>Smart Fertilizer Supply Chain</b></h4></span>
+      <span class="ml-3 text-xl">
+        <h4><b>Smart Fertilizer Supply Chain</b></h4>
+      </span>
     </a>
     <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
       <!-- <button
@@ -47,33 +51,34 @@
   <div class="container-card">
     <form id="contact" action="" method="post">
       <h4 style="margin-left: 55px;"><b>AGRO RYTHU SEVA KENDRAM(Point of Sale)</b></h4>
-      <!-- <fieldset>
+      <fieldset>
         <label for="Land">Land</label>
-        <input placeholder="Your Land" type="text" name="Land" tabindex="1"  autofocus>
-      </fieldset> -->
+        <input id="Land" placeholder="Your Land" type="number" name="Land" tabindex="1" autofocus>
+      </fieldset>
       <fieldset>
         <label id="npk" for="NPK">
           <p>
             N-P-K Ratio <br>(from sensor)
           </p>
         </label>
-        <input id="NPKValue" placeholder="N-P-K Ratio" type="text" tabindex="2" name="NPK" >
+        <input id="NPKValue" placeholder="N-P-K Ratio" type="text" tabindex="2" name="NPK">
       </fieldset>
-      <!-- <fieldset>
+      <fieldset>
         <label for="Fertilizer Quantity">Fertilizer Quantity</label>
-        <input placeholder="Fertilizer Quantity" name="Fertilizer Quantity" type="number" tabindex="3" >
-      </fieldset> -->
+        <input id="FertilizerQuantity" placeholder="Fertilizer Quantity" name="Fertilizer Quantity" type="number"
+          tabindex="3">
+      </fieldset>
       <fieldset>
         <label for="Fertilizer Type">Fertilizer Type</label>
-        <input placeholder="Fertilizer Type" name="Fertilizer Type" id="fertilizerType" type="text" tabindex="3" >
+        <input placeholder="Fertilizer Type" name="Fertilizer Type" id="fertilizerType" type="text" tabindex="4">
       </fieldset>
       <fieldset>
         <label for="Dealer Address">Dealer Address</label>
-        <input placeholder="Dealer Address" name="Dealer Address" id="dealerAddress" type="text" ></input>
+        <input placeholder="Dealer Address" name="Dealer Address" id="dealerAddress" type="text"></input>
       </fieldset>
       <fieldset>
         <label for="Farmer Address">Farmer Address</label>
-        <input id="FarmerAddress" placeholder="Farmer Address" name="farmer Address" type="text" ></input>
+        <input id="FarmerAddress" placeholder="Farmer Address" name="farmer Address" type="text"></input>
       </fieldset>
       <!-- <fieldset>
         <label for="Amount">Amount</label>

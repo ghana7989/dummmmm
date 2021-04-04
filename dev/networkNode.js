@@ -7,7 +7,6 @@ const port = process.argv[2]
 const rp = require('request-promise')
 const cors = require('cors')
 
-
 //const crypto= require('crypto');
 //const nodeAddress = crypto.randomBytes(16).toString('base64');
 
@@ -31,7 +30,7 @@ app.post('/transaction', function (req, res) {
 
 // broadcast transaction
 app.post('/transaction/broadcast', function (req, res) {
-	const dealerAddress = '	AGRORYTHUSEVAKENDRAMNBDNDFNHCFUJ'
+	const dealerAddress = 'AGRORYTHUSEVAKENDRAMNBDNDFNHCFUJ'
 	// Logic
 	const getFertilizerType = () => {
 		const [N, P, K] = req.body.npk.split('-')
@@ -53,7 +52,13 @@ app.post('/transaction/broadcast', function (req, res) {
 	}
 
 	const fertilizerType = getFertilizerType(req.body.npk)
-	const newTransaction = sfsc.createNewTransaction(req.body.npk, req.body.farmer, fertilizerType)
+	const newTransaction = sfsc.createNewTransaction(
+		req.body.npk,
+		req.body.farmer,
+		fertilizerType,
+    ( land = req.body.land ),
+
+	)
 	res.json({
 		...newTransaction,
 		dealerAddress,

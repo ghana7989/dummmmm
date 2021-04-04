@@ -32,12 +32,15 @@ class Blockchain {
 	getLastBlock() {
 		return this.chain[this.chain.length - 1]
 	}
-	createNewTransaction(npk, farmer, fertilizerType) {
+	createNewTransaction(npk, farmer, fertilizerType, land) {
+    const fertilizerQuantity=land*50
 		const newTransaction = {
 			NPKValue: npk,
 			FarmerAddress: farmer,
 			fertilizerType,
 			dealerAddress: 'AGRORYTHUSEVAKENDRAMNBDNDFNHCFUJ',
+			land,
+			fertilizerQuantity,
 			transactionId: uuid().split('-').join(''),
 		}
 

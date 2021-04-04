@@ -2,14 +2,11 @@
 
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
 const Blockchain = require('./blockchain')
 const port = process.argv[2]
 const rp = require('request-promise')
-const {v4: uuid} = require('uuid')
 const cors = require('cors')
 
-const nodeAddress = uuid().split('-').join('')
 
 //const crypto= require('crypto');
 //const nodeAddress = crypto.randomBytes(16).toString('base64');
@@ -36,7 +33,7 @@ app.post('/transaction', function (req, res) {
 app.post('/transaction/broadcast', function (req, res) {
 	const dealerAddress = '	AGRORYTHUSEVAKENDRAMNBDNDFNHCFUJ'
 	// Logic
-	const getFertilizerType = npk => {
+	const getFertilizerType = () => {
 		const [N, P, K] = req.body.npk.split('-')
 		let r1 = 4 - Number(N) / Number(K)
 		let r2 = 2 - Number(P) / Number(K)
@@ -159,7 +156,7 @@ app.post('/register-and-broadcast-node', function (req, res) {
 	})
 
 	Promise.all(regNodesPromises)
-		.then(data => {
+		.then(() => {
 			const bulkRegisterOptions = {
 				uri: newNodeUrl + '/register-nodes-bulk',
 				method: 'POST',
@@ -169,7 +166,7 @@ app.post('/register-and-broadcast-node', function (req, res) {
 
 			return rp(bulkRegisterOptions)
 		})
-		.then(data => {
+		.then(() => {
 			res.json({note: 'New node registered with network successfully.'})
 		})
 })

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script async  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.4/tailwind.min.css"
+    integrity="sha512-paVHVRRhdoOu1nOXKnqDC1Vka0nh7FAmU3nsM4n2FKxOQTeF6crMdMfkVvEsuaOXZ6oEAVL5+wLbQcule/Xdag=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <script  src="index.js" defer></script>
+  <title>Major Project</title>
+</head>
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+      <!-- <a class="mr-5 hover:text-gray-900">First Link</a>
+      <a class="mr-5 hover:text-gray-900">Second Link</a>
+      <a class="mr-5 hover:text-gray-900">Third Link</a>
+      <a class="hover:text-gray-900">Fourth Link</a> -->
+    </nav>
+    <a
+      class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+        stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-600 rounded-full"
+        viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span class="ml-3 text-xl"><h4><b>Smart Fertilizer Supply Chain</b></h4></span>
+    </a>
+    <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+      <!-- <button
+        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </button> -->
+    </div>
+  </div>
+</header>
+
+<body>
+
+  <div class="container-card">
+    <form id="contact" action="" method="post">
+      <h4 style="margin-left: 55px;"><b>AGRO RYTHU SEVA KENDRAM(Point of Sale)</b></h4>
+      <!-- <fieldset>
+        <label for="Land">Land</label>
+        <input placeholder="Your Land" type="text" name="Land" tabindex="1"  autofocus>
+      </fieldset> -->
+      <fieldset>
+        <label id="npk" for="NPK">
+          <p>
+            N-P-K Ratio <br>(from sensor)
+          </p>
+        </label>
+        <input id="NPKValue" placeholder="N-P-K Ratio" type="text" tabindex="2" name="NPK" >
+      </fieldset>
+      <!-- <fieldset>
+        <label for="Fertilizer Quantity">Fertilizer Quantity</label>
+        <input placeholder="Fertilizer Quantity" name="Fertilizer Quantity" type="number" tabindex="3" >
+      </fieldset> -->
+      <fieldset>
+        <label for="Fertilizer Type">Fertilizer Type</label>
+        <input placeholder="Fertilizer Type" name="Fertilizer Type" id="fertilizerType" type="text" tabindex="3" >
+      </fieldset>
+      <fieldset>
+        <label for="Dealer Address">Dealer Address</label>
+        <input placeholder="Dealer Address" name="Dealer Address" id="dealerAddress" type="text" ></input>
+      </fieldset>
+      <fieldset>
+        <label for="Farmer Address">Farmer Address</label>
+        <input id="FarmerAddress" placeholder="Farmer Address" name="farmer Address" type="text" ></input>
+      </fieldset>
+      <!-- <fieldset>
+        <label for="Amount">Amount</label>
+        <input type="text" name="amount" placeholder="Amount" />
+      </fieldset> -->
+      <fieldset>
+        <button name="submit" type="submit" id="submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+
+    </form>
+  </div>
+
+</body>
+
+</html>

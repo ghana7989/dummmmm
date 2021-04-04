@@ -1,0 +1,17 @@
+{
+  "name": "block-explorer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pos.js",
+  "scripts": {
+    "start": "parcel serve pos.html",
+    "build": "parcel build pos.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "regenerator-runtime": "^0.13.7"
+  }
+}
